@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-tooltip@0.25.0"></script>
+
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+</head>
+
+<body>
+
+    <div id="vis"></div>
+    <div id="stacked_bar_chart"></div>
+    
+    <script type="text/javascript">
+        var data_location1 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/HW_10/data/Stacked_Bar_Chart_Data.csv";
+        var data_location2 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/HW_10/data/map_clean_v1.csv";
+
+        // var spec2 = "js/Stacked_Bar_Chart.vg.json";
+        var spec1 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/HW_10/js/Stacked_Bar_Chart.vg.json";
+        var spec2 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/HW_10/js/visualization.vg.json";
+
+        vegaEmbed('#stacked_bar_chart', spec1).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#vis', spec2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+    </script>
+
+</body>
+
+</html>
