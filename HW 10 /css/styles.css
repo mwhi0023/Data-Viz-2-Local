@@ -1,0 +1,17 @@
+#vis {
+    margin: 100px 100px 50px 100px; /* top right bottom left */
+}
+
+#stacked_bar_chart {
+    margin: 50px 100px 100px 100px; /* top right bottom left */
+}
+
+body .vega-tooltip {
+    font-weight: bold;
+    color: #333 !important;
+}
+
+body .vega-tooltip th, body .vega-tooltip td {
+    font-weight: bold;
+    color: #333 !important;
+}

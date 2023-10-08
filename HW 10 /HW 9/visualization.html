@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.14.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
+</head>
+
+<body>
+
+  <div id="vis"/></div>
+
+  <script type="text/javascript">
+      var data_location = "map_clean_v1.csv"
+
+      // var spec2 = "visualization.vg.json";
+      var spec2 = "visualization.vg.json"
+
+      vegaEmbed('#vis', spec2).then(function(result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+  </script>
+
+</body>
+
+</html>
