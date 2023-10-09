@@ -108,9 +108,9 @@
       }
     },
     "tooltip": [
-      {"field": "Year", "type": "quantitative", "title": "Year:"},
-      {"field": "Terrorist attacks", "type": "quantitative", "title": "Terrorist attacks:"},
-      {"field": "Entity", "type": "nominal", "title": "Entity:"}
+      {"field": "Year", "type": "quantitative", "title": "Year"},
+      {"field": "Terrorist attacks", "type": "quantitative", "title": "Terrorist attacks"},
+      {"field": "Entity", "type": "nominal", "title": "Entity"}
     ]
   }
 }
