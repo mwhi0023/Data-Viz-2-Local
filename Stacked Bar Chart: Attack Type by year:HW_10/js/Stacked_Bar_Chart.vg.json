@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Deaths from terrorist attacks, by method of attack",
   "data": {
-    "url": "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/HW_10/data/Stacked_Bar_Chart_Data.csv"
+    "url": "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Stacked%20Bar%20Chart%3A%20Attack%20Type%20by%20year%3AHW_10/data/Stacked_Bar_Chart_Data.csv"
   },
   "transform": [
     {
