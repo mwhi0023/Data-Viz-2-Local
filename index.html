@@ -82,14 +82,17 @@
       <div class="pure-u-1-1">
           <div class="h2">
             <h2>
-              Stacked Bar Chart: Attack Types by Year
+             Deaths from Attack Types 
             </h2>
           </div>
       </div>
 
       <div class="pure-g">
-          <div class="pure-u-1-1"> <!-- Visualization on the left -->
+          <div class="pure-u-1-2"> <!-- Visualization on the left -->
               <div id="viz3" class="vis-container"></div>
+          </div>
+          <div class="pure-u-1-2">
+            <div id="viz5" class="vis-container" style="padding-left: 110px; padding-top: 110px;"></div>
           </div>
 
           <div class="pure-u-1-1"> <!-- Description on the right -->
@@ -123,18 +126,28 @@
           </div>
       </div>
     </div>
-    <!-- end pure grid group for fourth visualization -->
 
-<script type="text/javascript">
-  // ... (rest of the code remains unchanged for the first two visualizations) ...
+    <!-- Sixth visualization: Biggest Events by Deaths -->
+    <div class="pure-g"> <!-- Start a new grid for the sixth visualization -->
+      <div class="pure-u-1-2">
+          <h2 class="h2">Biggest Events by Deaths</h2>
+      </div>
 
-  vegaEmbed('#viz3', spec3).then(function(result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+      <div class="pure-g">
+          <div class="pure-u-1-2"> <!-- Centered Visualization -->
+              <div id="viz6" class="vis-container"></div>
+          </div>
 
-<!-- ... (rest of the code remains unchanged) ... -->
-
+          <div class="pure-u-1-2"> <!-- Description below visualization -->
+              <div class="description description-center" style="padding-left: 130px;">
+                  <p>
+                    This horizontal bar chart provides a sobering view of the most significant terrorist events based on the number of deaths. Each bar represents a distinct event, illustrating the magnitude of casualties involved. The color-coded bars enable viewers to quickly identify the terrorist group responsible for each act. Events like the "Ethiopia Mai Kadra Massacre" and "Somalia's Deadliest Bombing" sit at the top, indicating their devastating impact in terms of human lives lost. By understanding the deadliest events and the groups behind them, one can better grasp the scale and nature of global terrorist activities.
+                  </p>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- end pure grid group for sixth visualization -->
   
     <script type="text/javascript">
         var data_location1 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Stacked%20Bar%20Chart%3A%20Attack%20Type%20by%20year%3AHW_10/data/map_clean_v1.csv";
@@ -146,6 +159,8 @@
         var spec2 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Area%20Graph%3ATerrorist%20Attacks%20by%20Region/Area_Graph";
         var spec3 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Stacked%20Bar%20Chart%3A%20Attack%20Type%20by%20year%3AHW_10/js/Stacked_Bar_Chart.vg.json"
         var spec4 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Radar%20Graph%3A%20Attack%20Type%20by%20Groups/Radar%20Graph"
+        var spec5 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Pie%20Charts%3AAttack%20Type/Attack%20Type%20Deaths"
+        var spec6 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Horizontal%20Bar%20Chart%3A%20Biggest%20Events%20by%20Deaths/Prolific%20Terroist%20Events"
 
         vegaEmbed('#viz', spec1).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -162,6 +177,15 @@
         vegaEmbed('#viz4', spec4).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
+
+        vegaEmbed('#viz5', spec5).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#viz6', spec6).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
 </script>
 
 

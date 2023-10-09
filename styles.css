@@ -53,4 +53,6 @@ body {
 }
 
 
-
+.pure-g > .pure-u-1-2 {
+    width: 50%;
+}
