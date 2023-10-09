@@ -3,7 +3,7 @@
   "width": 500,
   "height": 400,
   "data": {
-    "url": "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Area%20Graph%3ATerrorist%20Attacks%20by%20Region/terrorist-attacks-by-region.csv"
+    "url": "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Area_Graph/terrorist-attacks-by-region.csv"
   },
   "params": [
     {
