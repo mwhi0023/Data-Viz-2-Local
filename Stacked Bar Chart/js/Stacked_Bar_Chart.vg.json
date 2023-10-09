@@ -1,0 +1,111 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Deaths from terrorist attacks, by method of attack",
+  "data": {
+    "url": "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Stacked%20Bar%20Chart%3A%20Attack%20Type%20by%20year%3AHW_10/data/Stacked_Bar_Chart_Data.csv"
+  },
+  "transform": [
+    {
+      "fold": [
+        "Terrorism deaths Unknown",
+        "Terrorism deaths Unarmed Assault",
+        "Terrorism deaths Facility/Infrastructure Attack",
+        "Terrorism deaths Assassination",
+        "Terrorism deaths Hijacking",
+        "Terrorism deaths Hostage Taking (Barricade Incident)",
+        "Terrorism deaths Hostage Taking (Kidnapping)",
+        "Terrorism deaths Armed Assault",
+        "Terrorism deaths Bombing/Explosion"
+      ],
+      "as": ["method", "deaths"]
+    },
+    {
+      "calculate": "datum.method == 'Terrorism deaths Unknown' ? 'Unknown' : datum.method == 'Terrorism deaths Unarmed Assault' ? 'Unarmed assault' : datum.method == 'Terrorism deaths Facility/Infrastructure Attack' ? 'Infrastructure attack' : datum.method == 'Terrorism deaths Assassination' ? 'Assassination' : datum.method == 'Terrorism deaths Hijacking' ? 'Hijacking' : datum.method == 'Terrorism deaths Hostage Taking (Barricade Incident)' ? 'Hostage barricading' : datum.method == 'Terrorism deaths Hostage Taking (Kidnapping)' ? 'Hostage kidnapping' : datum.method == 'Terrorism deaths Armed Assault' ? 'Armed assault' : 'Bombing'",
+      "as": "method"
+    },
+    {
+      "aggregate": [{"op": "sum", "field": "deaths", "as": "total_deaths"}],
+      "groupby": ["Year", "method"]
+    },
+    {
+      "filter": "datum.Year == Year_selection_start"
+    }
+  ],
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "axis": {"title": "Year"}
+        },
+        "y": {
+          "field": "total_deaths",
+          "type": "quantitative",
+          "axis": {"title": "Number of Deaths"},
+          "stack": true
+        },
+        "color": {
+          "field": "method",
+          "type": "nominal",
+          "legend": {"title": "Method of Attack"},
+          "scale": {"scheme": "tableau10"}
+        },
+        "tooltip": [
+          {"field": "method", "type": "nominal", "title": "Method of Attack"},
+          {"field": "total_deaths", "type": "quantitative", "title": "Number of Deaths", "format": ","}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"Year": 2001, "Annotation": "9/11 attacks in the USA"},
+          {"Year": 2004, "Annotation": "Madrid train bombings"},
+          {"Year": 2005, "Annotation": "London bombings"},
+          {"Year": 2008, "Annotation": "Mumbai attacks"}
+        ]
+      },
+      "transform": [
+        {"filter": "datum.Year == Year_selection_start"}
+      ],
+      "mark": {
+        "type": "text",
+        "yOffset": -70,
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 14
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "total_deaths",
+          "type": "quantitative",
+          "stack": true
+        },
+        "text": {"field": "Annotation", "type": "nominal"},
+        "color": {"value": "black"}
+      }
+    }
+  ],
+  "width": 400,
+  "height": 400,
+  "params": [
+    {
+      "name": "Year_selection_start",
+      "value": 2001,
+      "bind": {
+        "input": "range",
+        "min": 1980,
+        "max": 2021,
+        "step": 1,
+        "name": "Year: "
+      }
+    }
+  ]
+}
