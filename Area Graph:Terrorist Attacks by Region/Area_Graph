@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 600, "height": 400,
+  "width": 500, "height": 400,
   "data": {"url": "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Area%20Graph/terrorist-attacks-by-region.csv"},
   "mark": "area",
   "encoding": {
