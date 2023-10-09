@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "values": [
+      {"AttackType": "Armed Assault", "Count": 49553},
+      {"AttackType": "Assassination", "Count": 21539},
+      {"AttackType": "Bombing/Explosion", "Count": 98158},
+      {"AttackType": "Facility/Infrastructure Attack", "Count": 12325},
+      {"AttackType": "Hijacking", "Count": 759},
+      {"AttackType": "Hostage Taking (Barricade Incident)", "Count": 1156},
+      {"AttackType": "Hostage Taking (Kidnapping)", "Count": 14045},
+      {"AttackType": "Unarmed Assault", "Count": 1229},
+      {"AttackType": "Unknown", "Count": 10942}
+    ]
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {"field": "Count", "type": "quantitative"},
+    "color": {
+      "field": "AttackType",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Hijacking", "Hostage Taking (Barricade Incident)", "Unarmed Assault", "Armed Assault", "Assassination","Bombing/Explosion","Facility/Infrastructure Attack","Hostage Taking (Kidnapping)","Unknown" ],
+        "range": ["gray", "gray", "gray", "blue", "orange","red","turquoise", " green", "brown"]
+      }
+    },
+    "tooltip": [
+      {"field": "AttackType", "type": "nominal", "title": "Attack Type"},
+      {"field": "Count", "type": "quantitative", "title": "Count"}
+    ]
+  }
+}

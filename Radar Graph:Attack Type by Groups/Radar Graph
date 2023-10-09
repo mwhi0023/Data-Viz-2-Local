@@ -1,0 +1,247 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "A radar chart showing different types of terrorist attacks by groups.",
+  "width": 600,
+  "height": 550,
+  "padding": 80,
+  "autosize": {"type": "none", "contains": "padding"},
+
+  "signals": [
+    {"name": "radius", "update": "width / 2.2"}
+  ],
+
+  "data": [
+    {
+      "name": "table",
+      "values": [
+  {
+    "Group": "Taliban",
+    "AttackType": "Armed Assault",
+    "Count": 17788
+  },
+  {
+    "Group": "Taliban",
+    "AttackType": "Assassination",
+    "Count": 1473
+  },
+  {
+    "Group": "Taliban",
+    "AttackType": "Bombing/Explosion",
+    "Count": 14597
+  },
+  {
+    "Group": "Taliban",
+    "AttackType": "Hostage Taking (Kidnapping)",
+    "Count": 4086
+  },
+  {
+    "Group": "Taliban",
+    "AttackType": "Unknown",
+    "Count": 15344
+  },
+  {
+    "Group": "Islamic State of Iraq and the Levant (ISIL)",
+    "AttackType": "Armed Assault",
+    "Count": 3959
+  },
+  {
+    "Group": "Islamic State of Iraq and the Levant (ISIL)",
+    "AttackType": "Assassination",
+    "Count": 316
+  },
+  {
+    "Group": "Islamic State of Iraq and the Levant (ISIL)",
+    "AttackType": "Bombing/Explosion",
+    "Count": 21421
+  },
+  {
+    "Group": "Islamic State of Iraq and the Levant (ISIL)",
+    "AttackType": "Hostage Taking (Kidnapping)",
+    "Count": 10550
+  },
+  {
+    "Group": "Islamic State of Iraq and the Levant (ISIL)",
+    "AttackType": "Unknown",
+    "Count": 6425
+  }
+]
+    },
+    {
+      "name": "AttackTypes",
+      "source": "table",
+      "transform": [
+        {
+          "type": "aggregate",
+          "groupby": ["AttackType"]
+        }
+      ]
+    }
+  ],
+
+  "scales": [
+    {
+      "name": "angular",
+      "type": "point",
+      "range": {"signal": "[-PI, PI]"},
+      "padding": 0.5,
+      "domain": {"data": "table", "field": "AttackType"}
+    },
+    {
+      "name": "radial",
+      "type": "linear",
+      "range": {"signal": "[0, radius]"},
+      "zero": true,
+      "nice": false,
+      "domain": {"data": "table", "field": "Count"},
+      "domainMin": 0
+    },
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "table", "field": "Group"},
+      "range": {"scheme": "category10"}
+    }
+  ],
+
+  "encode": {
+    "enter": {
+      "x": {"signal": "radius"},
+      "y": {"signal": "radius"}
+    }
+  },
+
+  "marks": [
+    {
+      "type": "group",
+      "name": "groups",
+      "zindex": 1,
+      "from": {
+        "facet": {"data": "table", "name": "facet", "groupby": ["Group"]}
+      },
+      "marks": [
+        {
+          "type": "line",
+          "name": "group-line",
+          "from": {"data": "facet"},
+          "encode": {
+            "enter": {
+              "interpolate": {"value": "linear-closed"},
+              "x": {"signal": "scale('radial', datum.Count) * cos(scale('angular', datum.AttackType))"},
+              "y": {"signal": "scale('radial', datum.Count) * sin(scale('angular', datum.AttackType))"},
+              "stroke": {"scale": "color", "field": "Group"},
+              "strokeWidth": {"value": 1.2},
+              "fill": {"scale": "color", "field": "Group"},
+              "fillOpacity": {"value": 0.1}
+            },
+              "update": {
+                "tooltip": {
+                  "signal": "{'Group': datum.Group, 'AttackType': datum.AttackType, 'Count': datum.Count}"
+              }
+             }
+          }
+        },
+        {
+  "type": "text",
+  "name": "value-text",
+  "from": {"data": "group-line"},
+  "encode": {
+    "enter": {
+      "x": {"signal": "datum.x"},
+      "y": {"signal": "datum.y"},
+      "text": {"signal": "datum.datum.Count"},
+      "align": {"value": "center"},
+      "baseline": {"value": "middle"},
+      "fill": {"value": "black"}
+    }
+  }
+}
+
+      ]
+    },
+    {
+      "type": "rule",
+      "name": "radial-grid",
+      "from": {"data": "AttackTypes"},
+      "zindex": 0,
+      "encode": {
+        "enter": {
+          "x": {"value": 0},
+          "y": {"value": 0},
+          "x2": {"signal": "radius * cos(scale('angular', datum.AttackType))"},
+          "y2": {"signal": "radius * sin(scale('angular', datum.AttackType))"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    },
+    {
+      "type": "text",
+      "name": "attacktype-label",
+      "from": {"data": "AttackTypes"},
+      "zindex": 1,
+      "encode": {
+        "enter": {
+          "x": {"signal": "(radius + 15) * cos(scale('angular', datum.AttackType))"},
+          "y": {"signal": "(radius + 5) * sin(scale('angular', datum.AttackType))"},
+          "text": {"field": "AttackType"},
+          "align": [
+            {
+              "test": "abs(scale('angular', datum.AttackType)) > PI / 2",
+              "value": "right"
+            },
+            {
+              "value": "left"
+            }
+          ],
+          "baseline": [
+            {
+              "test": "scale('angular', datum.AttackType) > 1", "value": "top"
+            },
+            {
+              "test": "scale('angular', datum.AttackType) == 1", "value": "middle"
+            },
+            {
+              "value": "bottom"
+            }
+          ],
+          "fill": {"value": "black"},
+          "fontWeight": {"value": "bold"}
+        }
+      }
+    },
+    {
+      "type": "line",
+      "name": "outer-line",
+      "from": {"data": "radial-grid"},
+      "encode": {
+        "enter": {
+          "interpolate": {"value": "linear-closed"},
+          "x": {"field": "x2"},
+          "y": {"field": "y2"},
+          "stroke": {"value": "lightgray"},
+          "strokeWidth": {"value": 1}
+        }
+      }
+    }
+  ],
+"legends": [
+    {
+      "fill": "color",
+      "title": "Terrorist Group",
+      "orient": "bottom",
+      "offset": -175,
+      "encode": {
+        "symbols": {
+          "update": {
+            "shape": {"value": "circle"}
+          }
+        },
+        "labels": {
+          "update": {
+            "text": {"field": "value"}
+          }
+        }
+      }
+    }
+]  
+} 
