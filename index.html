@@ -46,34 +46,55 @@
         </div>
       </div>
       <div class="pure-u-1-1">
-        <div id="viz" class="vis-container" style="padding-right: 180px;"></div>
+        <div id="viz" class="vis-container"></div>
       </div>
     </div>
     <!-- end pure grid group -->
 
-        <!-- pure grid group -->
-        <div class="pure-g">
-          <div class="pure-u-1-1">
-            <div class="description description-left">
-              <h2>Stack Area Chart: Deaths from Terroism by Region</h2>
-            </div>
-          </div>
-          <div class="pure-u-1-1">
-            <div id="viz" class="vis-container"></div>
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <div class="h2">
+          <h2>
+            Stacked Area Chart: Terroism Attacks by Region 
+          </h2>
+        </div>
+      </div>
+    </div>
+      <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <p>This visualization presents an overview of the number of terrorist attacks by world region from 2011 to 2021. 
+              A clear peak is observable around 2014, after which there's a noticeable decline in incidents. 
+              The regions of the Middle East & North Africa, as well as South Asia, prominently dominate in terms of attack frequency, reflecting the intense conflicts and instabilities in those areas. 
+              Other regions, such as Australasia & Oceania and North America, have considerably fewer incidents. 
+              The chart serves as a testament to the varying degrees of terrorist activity across different parts of the world over the past decade. </p>
           </div>
         </div>
-        <!-- end pure grid group -->
+        <div class="pure-u-2-3">
+          <div id="viz2" class="vis-container"></div>
+        </div>
+      </div>
+    <!-- end pure grid group -->
+
 
   
     <script type="text/javascript">
         var data_location1 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/HW_10/data/map_clean_v1.csv";
+        var data_location2 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Area%20Graph%3ATerrorist%20Attacks%20by%20Region/terrorist-attacks-by-region.csv"
 
         // var spec1 = ";
-        var spec1 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/HW_10/js/visualization.vg.json";
+        var spec1 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Stacked%20Bar%20Chart%3AAttack%20Type%20by%20year%3AHW_10/js/visualization.vg.json";
+        var spec2 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Area%20Graph%3ATerrorist%20Attacks%20by%20Region/Area_Graph";
 
         vegaEmbed('#viz', spec1).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
+
+        vegaEmbed('#viz2', spec2).then(function(result) {
+            // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
 
 
   </script>

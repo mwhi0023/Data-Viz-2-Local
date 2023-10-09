@@ -1,9 +1,17 @@
-body *{
+body * {
     font-family: 'Open Sans', sans-serif;
 }
 
-h1 {
+h1, h2 {
     font-weight: 1000;
+    margin-top: 2px; /* Apply 0 margin to h1 as well */
+    margin-bottom: 0px; /* Adjust this as per your requirements */
+}
+
+h2 {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 300;
 }
 
 body {
@@ -14,29 +22,30 @@ body {
     width: 900px;
     background-color: white;
     margin: auto;
-    padding: 75px;
-    padding-top: 35px;
+    padding: 70px;
+    padding-top: 30px;
 }
 
 .vis-container {
     width: 75%;
+    padding-top: 20px; /* Adjust this value to your liking */
 }
 
-.description h2,
-h1 {
-    margin-top: 0px;
+.description h2 {
+    margin-top: 0px; /* Ensure 0 margin for h2 inside description */
 }
 
 .description-right {
-    padding-left: 20px;
+    padding-left: 1px;
 }
 
 .description-left {
     padding-right: 20px;
+    padding-top: 5px; /* You can adjust this if more or less space is needed */
 }
 
 .pure-g {
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .small-font {
