@@ -46,7 +46,7 @@
         </div>
       </div>
       <div class="pure-u-1-1">
-        <div id="viz" class="vis-container"></div>
+        <div id="viz" class="vis-container" style="padding-left: 60px;"></div>
       </div>
     </div>
     <!-- end pure grid group -->
@@ -103,21 +103,27 @@
     </div>
     <!-- end pure grid group for third visualization -->
 
-<script type="text/javascript">
-  // ... (rest of the code remains unchanged for the first two visualizations) ...
+    <!-- Fourth visualization: Radar Graph -->
+    <div class="pure-g"> <!-- Start a new grid for the fourth visualization -->
+      <div class="pure-u-1-1">
+          <h2 class="h2">Radar Graph: Attack Types by Groups</h2>
+      </div>
 
-  vegaEmbed('#viz3', spec3).then(function(result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
-</script>
+      <div class="pure-g">
+          <div class="pure-u-1-1"> <!-- Centered Visualization -->
+              <div id="viz4" class="vis-container"style="padding-left: 200px;"></div>
+          </div>
 
-<!-- ... (rest of the code remains unchanged) ... -->
-
-
-
-
-
-
+          <div class="pure-u-1-1"> <!-- Description below visualization -->
+              <div class="description description-center">
+                  <p>
+                      This radar graph provides insights into the different attack types deployed by various terrorist groups. Each radial segment represents a distinct terrorist group, allowing for an intuitive comparison of their preferred attack methods. Through this visualization, it becomes evident which groups employ similar strategies and which ones diverge in their tactics. Explore the intricacies of this graph to uncover the patterns and anomalies in group-based attack trends.
+                  </p>
+              </div>
+          </div>
+      </div>
+    </div>
+    <!-- end pure grid group for fourth visualization -->
 
 <script type="text/javascript">
   // ... (rest of the code remains unchanged for the first two visualizations) ...
@@ -139,6 +145,7 @@
         var spec1 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Stacked%20Bar%20Chart%3A%20Attack%20Type%20by%20year%3AHW_10/js/visualization.vg.json";
         var spec2 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Area%20Graph%3ATerrorist%20Attacks%20by%20Region/Area_Graph";
         var spec3 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Stacked%20Bar%20Chart%3A%20Attack%20Type%20by%20year%3AHW_10/js/Stacked_Bar_Chart.vg.json"
+        var spec4 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Radar%20Graph%3A%20Attack%20Type%20by%20Groups/Radar%20Graph"
 
         vegaEmbed('#viz', spec1).then(function(result) {
             // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -151,6 +158,12 @@
         vegaEmbed('#viz3', spec3).then(function(result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
         }).catch(console.error);
+
+        vegaEmbed('#viz4', spec4).then(function(result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+</script>
+
 
   </script>
 </body>
