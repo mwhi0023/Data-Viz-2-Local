@@ -1,14 +1,79 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 500, "height": 400,
-  "data": {"url": "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Area%20Graph%3ATerrorist%20Attacks%20by%20Region/terrorist-attacks-by-region.csv"},
+  "width": 500,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Area%20Graph%3ATerrorist%20Attacks%20by%20Region/terrorist-attacks-by-region.csv"
+  },
+  "params": [
+    {
+      "name": "Entity_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Australasia & Oceania",
+          "Central America & Caribbean",
+          "Central Asia",
+          "East Asia",
+          "Eastern Europe",
+          "Middle East & North Africa",
+          "North America",
+          "South Asia",
+          "Southeast Asia"
+        ],
+        "labels": [
+          "Show All",
+          "Australasia & Oceania",
+          "Central America & Caribbean",
+          "Central Asia",
+          "East Asia",
+          "Eastern Europe",
+          "Middle East & North Africa",
+          "North America",
+          "South Asia",
+          "Southeast Asia"
+        ],
+        "name": "Entity Selection:"
+      }
+    },
+    {
+      "name": "year_filter",
+      "value": 2012,
+      "bind": {
+        "input": "range",
+        "min": 2012,
+        "max": 2020,
+        "step": 1,
+        "name": "Show years greater than:"
+      }
+    },
+    {
+      "name": "year_filter2",
+      "value": 2021,
+      "bind": {
+        "input": "range",
+        "min": 2013,
+        "max": 2021,
+        "step": 1,
+        "name": "Show years less than:"
+     }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "Entity_selection == null || datum.Entity == Entity_selection"
+    },
+    {
+      "filter": "datum.Year >= year_filter"
+    },
+    {
+      "filter": "datum.Year <= year_filter2"
+    }
+  ],
   "mark": "area",
   "encoding": {
-    "x": {
-      "field": "Year",
-      "type": "temporal",
-      "axis": {"format": "%Y"}
-    },
+    "x": {"field": "Year", "type": "quantitative", "axis": {"format": "d"}},
     "y": {
       "aggregate": "sum",
       "field": "Terrorist attacks",
@@ -17,7 +82,35 @@
     "color": {
       "field": "Entity",
       "type": "nominal",
-      "scale": {"scheme": "category20b"}
-    }
+      "scale": {
+        "domain": [
+          "Australasia & Oceania",
+          "Central America & Caribbean",
+          "Central Asia",
+          "East Asia",
+          "Eastern Europe",
+          "Middle East & North Africa",
+          "North America",
+          "South Asia",
+          "Southeast Asia"
+        ],
+        "range": [
+          "#8dd3c7",
+          "#ffffb3",
+          "#bebada",
+          "#fb8072",
+          "#80b1d3",
+          "#fdb462",
+          "#b3de69",
+          "#fccde5",
+          "#d9d9d9"
+        ]
+      }
+    },
+    "tooltip": [
+      {"field": "Year", "type": "quantitative", "title": "Year:"},
+      {"field": "Terrorist attacks", "type": "quantitative", "title": "Terrorist attacks:"},
+      {"field": "Entity", "type": "nominal", "title": "Entity:"}
+    ]
   }
 }
