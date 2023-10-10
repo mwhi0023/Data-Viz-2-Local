@@ -40,27 +40,27 @@
     "Count": 15344
   },
   {
-    "Group": "Islamic State of Iraq and the Levant (ISIL)",
+    "Group": "Islamic State (ISIS)",
     "AttackType": "Armed Assault",
     "Count": 3959
   },
   {
-    "Group": "Islamic State of Iraq and the Levant (ISIL)",
+    "Group": "Islamic State (ISIS)",
     "AttackType": "Assassination",
     "Count": 316
   },
   {
-    "Group": "Islamic State of Iraq and the Levant (ISIL)",
+    "Group": "Islamic State (ISIS)",
     "AttackType": "Bombing/Explosion",
     "Count": 21421
   },
   {
-    "Group": "Islamic State of Iraq and the Levant (ISIL)",
+    "Group": "Islamic State (ISIS)",
     "AttackType": "Hostage Taking (Kidnapping)",
     "Count": 10550
   },
   {
-    "Group": "Islamic State of Iraq and the Levant (ISIL)",
+    "Group": "Islamic State (ISIS)",
     "AttackType": "Unknown",
     "Count": 6425
   }
@@ -114,7 +114,7 @@
     {
       "type": "group",
       "name": "groups",
-      "zindex": 1,
+      "zindex": 2,
       "from": {
         "facet": {"data": "table", "name": "facet", "groupby": ["Group"]}
       },
@@ -144,12 +144,15 @@
   "type": "text",
   "name": "value-text",
   "from": {"data": "group-line"},
+  "zindex": 2,
   "encode": {
     "enter": {
       "x": {"signal": "datum.x"},
       "y": {"signal": "datum.y"},
       "text": {"signal": "datum.datum.Count"},
       "align": {"value": "center"},
+        "fontSize": {"value":11},
+      "fontWeight": {"value": "bold"},
       "baseline": {"value": "middle"},
       "fill": {"value": "black"}
     }
@@ -205,6 +208,7 @@
             }
           ],
           "fill": {"value": "black"},
+          "fontSize": {"value": 12},
           "fontWeight": {"value": "bold"}
         }
       }

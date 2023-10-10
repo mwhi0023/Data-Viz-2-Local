@@ -31,7 +31,12 @@
       "field": "gname",
       "type": "nominal",
       "legend": {"title": "Terrorist Group"}
-    }
+    },
+    "tooltip": [
+      {"field": "gname", "type": "nominal", "title": "Terrorist Group:"},
+      {"field": "nkill", "type": "quantitative", "title": "Number of Casualties:"},
+      {"field": "Attack Title", "type": "ordinal", "title": "Attack Title:"}
+    ]
   }
 }
 
