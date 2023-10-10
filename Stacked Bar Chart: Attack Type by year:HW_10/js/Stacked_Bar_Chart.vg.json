@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Deaths from terrorist attacks, by method of attack",
   "data": {
     "url": "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Stacked%20Bar%20Chart%3A%20Attack%20Type%20by%20year%3AHW_10/data/Stacked_Bar_Chart_Data.csv"
   },
@@ -26,12 +27,7 @@
       "aggregate": [{"op": "sum", "field": "deaths", "as": "total_deaths"}],
       "groupby": ["Year", "method"]
     },
-    {
-      "filter": "datum.Year >= year_filter"
-    },
-    {
-      "filter": "datum.Year <= year_filter2"
-    }
+    {"filter": "datum.Year == Year_selection_start"}
   ],
   "layer": [
     {
@@ -48,10 +44,7 @@
           "field": "method",
           "type": "nominal",
           "legend": {"title": "Method of Attack"},
-          "scale": {
-            "domain": [ "Armed assault", "Assassination", "Bombing", "Infrastructure attack", "Hostage kidnapping", "Unknown","Hijacking", "Hostage barricading", "Unarmed assault"],
-            "range": ["blue", "orange","red","turquoise", " green", "brown", "gray", "gray", "gray"]
-          }
+          "scale": {"scheme": "tableau10"}
         },
         "tooltip": [
           {"field": "method", "type": "nominal", "title": "Method of Attack"},
@@ -63,31 +56,49 @@
           }
         ]
       }
+    },
+    {
+      "data": {
+        "values": [
+          {"Year": 2001, "Annotation": "9/11 attacks in the USA"},
+          {"Year": 2004, "Annotation": "Madrid train bombings"},
+          {"Year": 2005, "Annotation": "London bombings"},
+          {"Year": 2008, "Annotation": "Mumbai attacks"}
+        ]
+      },
+      "transform": [{"filter": "datum.Year == Year_selection_start"}],
+      "mark": {
+        "type": "text",
+        "yOffset": -70,
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 14
+      },
+      "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {
+          "aggregate": "sum",
+          "field": "total_deaths",
+          "type": "quantitative",
+          "stack": true
+        },
+        "text": {"field": "Annotation", "type": "nominal"},
+        "color": {"value": "black"}
+      }
     }
   ],
   "width": 400,
   "height": 400,
   "params": [
     {
-      "name": "year_filter",
-      "value": 2012,
+      "name": "Year_selection_start",
+      "value": 2001,
       "bind": {
         "input": "range",
-        "min": 2012,
-        "max": 2020,
-        "step": 1,
-        "name": "Show years greater than:"
-      }
-    },
-    {
-      "name": "year_filter2",
-      "value": 2021,
-      "bind": {
-        "input": "range",
-        "min": 2013,
+        "min": 1980,
         "max": 2021,
         "step": 1,
-        "name": "Show years less than:"
+        "name": "Year: "
       }
     }
   ]
