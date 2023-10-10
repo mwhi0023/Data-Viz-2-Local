@@ -1,4 +1,3 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
@@ -21,8 +20,8 @@
       "field": "AttackType",
       "type": "nominal",
       "scale": {
-        "domain": ["Hijacking", "Hostage Taking (Barricade Incident)", "Unarmed Assault", "Armed Assault", "Assassination","Bombing/Explosion","Facility/Infrastructure Attack","Hostage Taking (Kidnapping)","Unknown" ],
-        "range": ["gray", "gray", "gray", "blue", "orange","red","turquoise", " green", "brown"]
+        "domain": ["Armed Assault", "Assassination","Bombing/Explosion","Facility/Infrastructure Attack","Hostage Taking (Kidnapping)","Unknown","Hijacking", "Hostage Taking (Barricade Incident)", "Unarmed Assault" ],
+        "range": ["blue", "orange","red","turquoise", " green", "brown", "gray", "gray", "gray"]
       }
     },
     "tooltip": [
