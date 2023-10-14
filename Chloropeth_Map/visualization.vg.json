@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "Terrorism Kills by Country", "color": "black"},
+  "title": {"text": "Terrorism Kills by Country", "color": "black", "dy":-5},
   "width": 800,
   "height": 400,
   "projection": {"type": "equalEarth"},
@@ -13,7 +13,7 @@
       "lookup": "properties.NAME",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/mwhi0023/DataViz2/main/map_clean_v1.csv"
+          "url": "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Chloropeth_Map/map_clean_v1.csv"
         },
         "key": "country",
         "fields": ["numkills"]
@@ -26,7 +26,11 @@
     "color": {
       "field": "Number of Kills",
       "type": "quantitative",
-      "scale": {"type": "sqrt", "scheme": "reds", "domain": [0, 45000]},
+      "scale": {
+        "type": "threshold",
+        "domain": [100, 1000, 5000, 10000],
+        "range": ["#fdbe85", "#fd8d3c", "#f26915", "#a63603", "#7a2602", "#561a01"]
+      },
       "legend": {"title": "Number of Kills"}
     },
     "tooltip": [
@@ -34,5 +38,8 @@
       {"field": "numkills", "type": "quantitative", "title": "Number of Kills"}
     ]
   },
-  "config": {"background": "#D0E8F2", "view": {"stroke": "transparent"}}
+  "config": {
+    "background": "#D0E8F2",
+    "view": {"stroke": "black", "strokeWidth": 2, "fill": "#D0E8F2"}
+  }
 }

@@ -56,3 +56,35 @@ body {
 .pure-g > .pure-u-1-2 {
     width: 50%;
 }
+
+.legend-container {
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+h3 {
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    border: none;  
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.taliban {
+    background-color: #3498db; /* Blue color */
+}
+
+.isis {
+    background-color: #e74c3c; /* Orange color */
+}

@@ -106,26 +106,48 @@
     </div>
     <!-- end pure grid group for third visualization -->
 
-    <!-- Fourth visualization: Radar Graph -->
-    <div class="pure-g"> <!-- Start a new grid for the fourth visualization -->
-      <div class="pure-u-1-1">
-          <h2 class="h2">Radar Graph: Attack Types by Groups</h2>
+<!-- Fourth visualization: Radar Graph -->
+<div class="pure-g"> <!-- Start a new grid for the fourth visualization -->
+  <div class="pure-u-1-1">
+      <h2 class="h2">Radar Graph: Attack Types by Groups</h2>
+  </div>
+
+  <div class="pure-g">
+      <div class="pure-u-1-1"> <!-- Centered Visualization -->
+
+          <!-- Title for the Radar Graph -->
+          <h3 class="h3" style="text-align: center; position: relative; top: 75px;">Radar Graph</h3>
+
+
+          <div id="viz4" class="vis-container" style="padding-left: 200px;"></div>
+
+          <!-- Custom Legend for the Radar Graph -->
+          <div class="legend-container">
+            <h3>Terrorist Groups</h3>
+            <div class="legend-item">
+                <div class="legend-color taliban"></div>
+                <span class="legend-label">Taliban</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color isis"></div>
+                <span class="legend-label">Islamic State (ISIS)</span>
+            </div>
+        </div>
+          <!-- End of Custom Legend -->
+          
       </div>
 
-      <div class="pure-g">
-          <div class="pure-u-1-1"> <!-- Centered Visualization -->
-              <div id="viz4" class="vis-container"style="padding-left: 200px;"></div>
-          </div>
-
-          <div class="pure-u-1-1"> <!-- Description below visualization -->
-              <div class="description description-center">
-                  <p>
-                      This radar graph provides insights into the different attack types deployed by various terrorist groups. Each radial segment represents a distinct terrorist group, allowing for an intuitive comparison of their preferred attack methods. Through this visualization, it becomes evident which groups employ similar strategies and which ones diverge in their tactics. Explore the intricacies of this graph to uncover the patterns and anomalies in group-based attack trends.
-                  </p>
-              </div>
+      <div class="pure-u-1-1"> <!-- Description below visualization -->
+          <div class="description description-center">
+              <p>
+                  This radar graph provides insights into the different attack types deployed by various terrorist groups. Each radial segment represents a distinct terrorist group, allowing for an intuitive comparison of their preferred attack methods. Through this visualization, it becomes evident which groups employ similar strategies and which ones diverge in their tactics. Explore the intricacies of this graph to uncover the patterns and anomalies in group-based attack trends.
+              </p>
           </div>
       </div>
-    </div>
+  </div>
+</div>
+
+
 
     <!-- Sixth visualization: Biggest Events by Deaths -->
     <div class="pure-g"> <!-- Start a new grid for the sixth visualization -->

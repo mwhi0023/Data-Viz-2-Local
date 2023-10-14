@@ -21,7 +21,17 @@
       "type": "nominal",
       "scale": {
         "domain": ["Armed Assault", "Assassination","Bombing/Explosion","Facility/Infrastructure Attack","Hostage Taking (Kidnapping)","Unknown","Hijacking", "Hostage Taking (Barricade Incident)", "Unarmed Assault" ],
-        "range": ["blue", "orange","red","turquoise", " green", "brown", "gray", "gray", "gray"]
+        "range": [
+          "#5e81ac",
+          "#88c0d0",
+          "#d08770",
+          "#ebcb8b",
+          "#a3be8c",
+          "#b48ead",
+          "gray",
+          "gray",
+          "gray"
+        ]
       }
     },
     "tooltip": [

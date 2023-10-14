@@ -5,6 +5,9 @@
   },
   "transform": [
     {
+      "filter": "datum.Year >= 2011"
+    },
+    {
       "fold": [
         "Terrorism deaths Unknown",
         "Terrorism deaths Unarmed Assault",
@@ -23,14 +26,14 @@
       "as": "method"
     },
     {
+      "filter": "method_filter == 'All' || datum.method == method_filter"
+    },
+    {
       "aggregate": [{"op": "sum", "field": "deaths", "as": "total_deaths"}],
       "groupby": ["Year", "method"]
     },
     {
-      "filter": "datum.Year >= year_filter"
-    },
-    {
-      "filter": "datum.Year <= year_filter2"
+      "filter": "datum.Year <= year_filter"
     }
   ],
   "layer": [
@@ -48,7 +51,30 @@
           "field": "method",
           "type": "nominal",
           "legend": {"title": "Method of Attack"},
-          "scale": {"scheme": "tableau10"}
+          "scale": {
+            "domain": [
+              "Unknown",
+              "Infrastructure attack",
+              "Assassination",
+              "Hostage kidnapping",
+              "Armed assault",
+              "Bombing",
+              "Unarmed assault",
+              "Hostage barricading",
+              "Hijacking"
+            ],
+            "range": [
+              "#5e81ac",
+              "#88c0d0",
+              "#d08770",
+              "#ebcb8b",
+              "#a3be8c",
+              "#b48ead",
+              "gray",
+              "gray",
+              "gray"
+            ]
+          }
         },
         "tooltip": [
           {"field": "method", "type": "nominal", "title": "Method of Attack"},
@@ -62,29 +88,38 @@
       }
     }
   ],
-  "width": 400,
+  "width": 500,
   "height": 400,
   "params": [
     {
       "name": "year_filter",
-      "value": 2012,
-      "bind": {
-        "input": "range",
-        "min": 2012,
-        "max": 2020,
-        "step": 1,
-        "name": "Show years greater than:"
-      }
-    },
-    {
-      "name": "year_filter2",
       "value": 2021,
       "bind": {
         "input": "range",
-        "min": 2013,
+        "min": 2011,
         "max": 2021,
         "step": 1,
-        "name": "Show years less than:"
+        "name": "Years less than:"
+      }
+    },
+    {
+      "name": "method_filter",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All",
+          "Unknown",
+          "Unarmed assault",
+          "Infrastructure attack",
+          "Assassination",
+          "Hijacking",
+          "Hostage barricading",
+          "Hostage kidnapping",
+          "Armed assault",
+          "Bombing"
+        ],
+        "name": "Method of Attack:"
       }
     }
   ]
