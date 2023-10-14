@@ -39,7 +39,7 @@
     ]
   },
   "config": {
-    "background": "#D0E8F2",
+    "background": "white", 
     "view": {"stroke": "black", "strokeWidth": 2, "fill": "#D0E8F2"}
   }
 }
