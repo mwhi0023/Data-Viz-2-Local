@@ -3,7 +3,7 @@
   "description": "A radar chart showing different types of terrorist attacks by groups.",
   "width": 600,
   "height": 550,
-  "padding": 80,
+  "padding": 100,
   "autosize": {"type": "none", "contains": "padding"},
 
   "signals": [
@@ -227,25 +227,5 @@
         }
       }
     }
-  ],
-"legends": [
-    {
-      "fill": "color",
-      "title": "Terrorist Group",
-      "orient": "bottom",
-      "offset": -175,
-      "encode": {
-        "symbols": {
-          "update": {
-            "shape": {"value": "circle"}
-          }
-        },
-        "labels": {
-          "update": {
-            "text": {"field": "value"}
-          }
-        }
-      }
-    }
-]  
+  ]
 } 
