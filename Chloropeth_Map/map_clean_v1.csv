@@ -31,7 +31,7 @@ Burundi,4294
 Cambodia,543
 Cameroon,3186
 Canada,381
-Central African Republic,2440
+Central African Rep.,2440
 Chad,1664
 Chile,231
 China,1010
@@ -43,7 +43,7 @@ Cuba,8
 Cyprus,45
 Czech Republic,6
 Czechoslovakia,27
-Democratic Republic of the Congo,7060
+Dem. Rep. Congo,7060
 Denmark,5
 Djibouti,274
 Dominica,3
@@ -118,6 +118,7 @@ Mauritania,43
 Mauritius,0
 Mexico,846
 Moldova,13
+Mongolia,0
 Montenegro,2
 Morocco,294
 Mozambique,3893
@@ -144,7 +145,7 @@ Philippines,10680
 Poland,9
 Portugal,32
 Qatar,7
-Republic of the Congo,182
+Congo,182
 Rhodesia,217
 Romania,4
 Russia,4329
@@ -188,7 +189,7 @@ Uganda,3104
 Ukraine,2303
 United Arab Emirates,123
 United Kingdom,3426
-United States,3926
+United States of America,3926
 Uruguay,6
 Uzbekistan,68
 Vanuatu,0
@@ -198,9 +199,10 @@ Vietnam,1
 Wallis and Futuna,0
 West Bank and Gaza Strip,1663
 West Germany (FRG),97
-Western Sahara,1
+W. Sahara,1
 Yemen,12842
 Yugoslavia,119
 Zaire,324
 Zambia,70
 Zimbabwe,157
+Greenland,0
