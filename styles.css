@@ -27,10 +27,14 @@ body {
 }
 
 .vis-container {
-    width: 75%;
-    padding-top: 20px; /* Adjust this value to your liking */
+    /* Adjust this to fit your needs, for example by adding a border or some padding */
+    width: 100%;
+    height: auto;
 }
 
+.description {
+    padding: 10px;
+}
 .description h2 {
     margin-top: 0px; /* Ensure 0 margin for h2 inside description */
 }
