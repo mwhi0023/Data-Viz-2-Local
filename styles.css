@@ -48,7 +48,6 @@ body {
 .description p {
     text-align: justify;
     text-justify: inter-word;
-    padding-left: 20px; /* adjust value as needed */
 }
 
 /* Base styling for description */
