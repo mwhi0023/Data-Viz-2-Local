@@ -64,7 +64,7 @@
     }
   ],
   "config": {
-    "background": "white",
-    "view": {"stroke": "black", "strokeWidth": 2, "fill": "#D0E8F2"}
+    "background": "transparent",
+    "view": {"stroke": "transparent", "fill": "transparent"}
   }
 }
