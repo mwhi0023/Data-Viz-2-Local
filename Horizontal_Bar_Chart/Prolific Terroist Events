@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Prolific Terrorist Events",
   "data": {
     "values": [
       {"gname": "Samri militia", "nkill": 766, "Attack Title": "Ethiopia Mai Kadra Massacre"},
@@ -43,4 +44,3 @@
     ]
   }
 }
-
