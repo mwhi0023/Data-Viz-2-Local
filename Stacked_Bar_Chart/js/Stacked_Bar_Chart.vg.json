@@ -89,8 +89,6 @@
       }
     }
   ],
-  "width": 500,
-  "height": 400,
   "params": [
     {
       "name": "year_filter",
