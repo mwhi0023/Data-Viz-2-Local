@@ -5,15 +5,15 @@
   "height": 400,
   "data": {
     "values": [
-      {"Method of Attack": "Armed Assault", "Deaths": 182325},
+      {"Method of Attack": "Unknown", "Deaths": 48707},
+      {"Method of Attack": "Infrastructure Attack", "Deaths": 4552},
       {"Method of Attack": "Assassination", "Deaths": 27598},
-      {"Method of Attack": "Bombing/Explosion", "Deaths": 174134},
-      {"Method of Attack": "Facility/Infrastructure Attack", "Deaths": 4552},
-      {"Method of Attack": "Hijacking", "Deaths": 3748},
-      {"Method of Attack": "Hostage Taking (Barricade Incident)", "Deaths": 5050},
-      {"Method of Attack": "Hostage Taking (Kidnapping)", "Deaths": 32301},
+      {"Method of Attack": "Hostage Kidnapping", "Deaths": 32301},
+      {"Method of Attack": "Armed Assault", "Deaths": 182325},
+      {"Method of Attack": "Bombing", "Deaths": 174134},
       {"Method of Attack": "Unarmed Assault", "Deaths": 933},
-      {"Method of Attack": "Unknown", "Deaths": 48707}
+      {"Method of Attack": "Hostage Barricading", "Deaths": 5050},
+      {"Method of Attack": "Hijacking", "Deaths": 3748}
     ]
   },
   "mark": "arc",
@@ -22,23 +22,33 @@
     "color": {
       "field": "Method of Attack",
       "type": "nominal",
-      "scale": {
-        "domain": ["Armed Assault", "Assassination","Bombing/Explosion","Facility/Infrastructure Attack","Hostage Taking (Kidnapping)","Unknown","Hijacking", "Hostage Taking (Barricade Incident)", "Unarmed Assault" ],
-        "range": [
-          "#5e81ac",
-          "#88c0d0",
-          "#d08770",
-          "#ebcb8b",
-          "#a3be8c",
-          "#b48ead",
-          "gray",
-          "gray",
-          "gray"
-        ]
+          "scale": {
+            "domain": [
+              "Unknown",
+              "Infrastructure Attack",
+              "Assassination",
+              "Hostage Kidnapping",
+              "Armed Assault",
+              "Bombing",
+              "Unarmed Assault",
+              "Hostage Barricading",
+              "Hijacking"
+            ],
+            "range": [
+              "#5e81ac",
+              "#88c0d0",
+              "#d08770",
+              "#ebcb8b",
+              "#a3be8c",
+              "#b48ead",
+              "gray",
+              "gray",
+              "gray"
+            ]
       }
     },
     "tooltip": [
-      {"field": "Method of Attack:", "type": "nominal", "title": "Attack Type:"},
+      {"field": "Method of Attack", "type": "nominal", "title": "Method of Attack:"},
       {"field": "Deaths", "type": "quantitative", "title": "Deaths:"}
     ]
   }
