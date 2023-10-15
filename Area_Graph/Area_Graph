@@ -69,6 +69,10 @@
     "color": {
       "field": "Region",
       "type": "nominal",
+        "legend": {
+            "title": "Method of Attack",
+            "symbolType": "circle"  
+          },
       "scale": {
         "domain": [
           "Australasia & Oceania",
