@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Prolific Terrorist Events",
-  "width": 300,
-  "height": 300,
+  "width": 400,
+  "height": 400,
   "data": {
     "values": [
       {
@@ -17,12 +17,12 @@
       },
       {"gname": "Taliban", "nkill": 466, "Attack Title": "Ghazni offensive"},
       {
-        "gname": "Islamic State (ISIS)",
+        "gname": "Islamic State of Iraq and the Levant (ISIL)",
         "nkill": 433,
         "Attack Title": "Palmyra offensive"
       },
       {
-        "gname": "Islamic State (ISIS)",
+        "gname": "Islamic State of Iraq and the Levant (ISIL)",
         "nkill": 383,
         "Attack Title": "Iraq bombing"
       },
@@ -33,17 +33,17 @@
       },
       {"gname": "Taliban", "nkill": 330, "Attack Title": "Battle of Farah"},
       {
-        "gname": "Islamic State (ISIS)",
+        "gname": "Sinai Province of the Islamic State",
         "nkill": 311,
         "Attack Title": "Sinai mosque attack"
       },
       {
-        "gname": "Islamic State (ISIS)",
+        "gname": "Islamic State of Iraq and the Levant (ISIL)",
         "nkill": 300,
         "Attack Title": "Battle of Mosul (1)"
       },
       {
-        "gname": "Islamic State (ISIS)",
+        "gname": "Islamic State of Iraq and the Levant (ISIL)",
         "nkill": 284,
         "Attack Title": "Battle of Mosul (2)"
       }
@@ -70,18 +70,23 @@
           "Samri militia",
           "Al-Shabaab",
           "Taliban",
-          "Islamic State (ISIS)",
-          "Tribesmen"
+          "Islamic State of Iraq and the Levant (ISIL)",
+          "Tribesmen",
+          "Sinai Province of the Islamic State"
         ],
         "range": [
           "#E69F00",
           "#56B4E9",
           "#D55E00",
           "#F0E442",
-          "#0072B2"
+          "#0072B2",
+          "#CC79A7"
         ]
       },
-      "legend": {"title": "Terrorist Group"}
+      "legend": {
+        "title": "Terrorist Group", 
+        "symbolType": "circle" 
+        },
     },
     "tooltip": [
       {"field": "gname", "type": "nominal", "title": "Terrorist Group:"},

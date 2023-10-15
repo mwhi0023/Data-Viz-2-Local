@@ -53,7 +53,10 @@
         "color": {
           "field": "method",
           "type": "nominal",
-          "legend": {"title": "Method of Attack"},
+            "legend": {
+              "title": "Method of Attack",
+              "symbolType": "circle"  // Add this line
+            },
           "scale": {
             "domain": [
               "Unknown",
