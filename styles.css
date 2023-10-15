@@ -116,3 +116,10 @@ h3 {
 .isis {
     background-color: #e74c3c;
 }
+
+.annotation {
+    text-align: left;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}

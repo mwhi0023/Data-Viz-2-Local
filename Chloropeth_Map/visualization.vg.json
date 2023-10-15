@@ -61,21 +61,6 @@
           {"field": "numkills", "type": "quantitative", "title": "Number of Kills"}
         ]
       }
-    },
-    {
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "baseline": "bottom",
-        "dx": 5,
-        "dy": -5
-      },
-      "data": {"values": [{}]},
-      "encoding": {
-        "text": {"value": "Figure 1"},
-        "x": {"value": 0},
-        "y": {"value": 410}
-      }
     }
   ],
   "config": {
