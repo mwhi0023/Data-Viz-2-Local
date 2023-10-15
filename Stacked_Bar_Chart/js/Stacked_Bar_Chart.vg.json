@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Deaths from Attack Types",
   "width": 400,
-  "height": 400,
+  "height": 500,
   "data": {
     "url": "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Stacked_Bar_Chart/data/Stacked_Bar_Chart_Data.csv"
   },
