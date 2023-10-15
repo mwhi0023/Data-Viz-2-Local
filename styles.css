@@ -44,18 +44,6 @@ body {
     height: auto;
 }
 
-.flex-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.chart-container, .description-container {
-    flex: 1;  /* This means they will take up equal parts */
-    padding: 0 10px;  /* Some padding to avoid sticking to the edges or each other */
-}
-
-
-
 /* Paragraph styling inside .description */
 .description p {
     text-align: justify;
