@@ -26,15 +26,27 @@ body {
     padding-top: 30px;
 }
 
+ {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .vis-container {
     /* Adjust this to fit your needs, for example by adding a border or some padding */
-    width: 100%;
+    width: 50%;
     height: auto;
 }
 
-.description {
-    padding: 10px;
+.description p {
+    text-align: justify;
+    text-justify: inter-word; /* this helps in better spacing between words */
 }
+
+.description {
+    padding: 0px;
+}
+
 .description h2 {
     margin-top: 0px; /* Ensure 0 margin for h2 inside description */
 }
