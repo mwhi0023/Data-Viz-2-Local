@@ -93,17 +93,6 @@
   ],
   "params": [
     {
-      "name": "year_filter",
-      "value": 2021,
-      "bind": {
-        "input": "range",
-        "min": 2011,
-        "max": 2021,
-        "step": 1,
-        "name": "Years less than:"
-      }
-    },
-    {
       "name": "method_filter",
       "value": "All",
       "bind": {
@@ -121,6 +110,17 @@
           "Bombing"
         ],
         "name": "Method of Attack:"
+      }
+    },
+    {
+      "name": "year_filter",
+      "value": 2021,
+      "bind": {
+        "input": "range",
+        "min": 2011,
+        "max": 2021,
+        "step": 1,
+        "name": "Years less than:"
       }
     }
   ]

@@ -8,7 +8,7 @@
   },
   "params": [
     {
-      "name": "Entity_selection",
+      "name": "Region",
       "bind": {
         "input": "select",
         "options": [
@@ -35,7 +35,7 @@
           "South Asia",
           "Southeast Asia"
         ],
-        "name": "Entity Selection:"
+        "name": "Region:"
       }
     },
     {
@@ -52,7 +52,7 @@
   ],
   "transform": [
     {
-      "filter": "Entity_selection == null || datum.Entity == Entity_selection"
+      "filter": "Region == null || datum.Region == Region"
     },
     {
       "filter": "datum.Year <= year_filter2"
@@ -67,7 +67,7 @@
       "type": "quantitative"
     },
     "color": {
-      "field": "Entity",
+      "field": "Region",
       "type": "nominal",
       "scale": {
         "domain": [
@@ -95,9 +95,9 @@
       }
     },
     "tooltip": [
-      {"field": "Year", "type": "quantitative", "title": "Year"},
-      {"field": "Terrorist attacks", "type": "quantitative", "title": "Terrorist attacks"},
-      {"field": "Entity", "type": "nominal", "title": "Entity"}
+      {"field": "Year", "type": "quantitative", "title": "Year:"},
+      {"field": "Terrorist attacks", "type": "quantitative", "title": "Terrorist attacks:"},
+      {"field": "Region", "type": "nominal", "title": "Region:"}
     ]
   }
 }

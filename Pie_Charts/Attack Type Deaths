@@ -5,15 +5,15 @@
   "height": 400,
   "data": {
     "values": [
-      {"AttackType": "Armed Assault", "Deaths": 182325},
-      {"AttackType": "Assassination", "Deaths": 27598},
-      {"AttackType": "Bombing/Explosion", "Deaths": 174134},
-      {"AttackType": "Facility/Infrastructure Attack", "Deaths": 4552},
-      {"AttackType": "Hijacking", "Deaths": 3748},
-      {"AttackType": "Hostage Taking (Barricade Incident)", "Deaths": 5050},
-      {"AttackType": "Hostage Taking (Kidnapping)", "Deaths": 32301},
-      {"AttackType": "Unarmed Assault", "Deaths": 933},
-      {"AttackType": "Unknown", "Deaths": 48707}
+      {"Method of Attack": "Armed Assault", "Deaths": 182325},
+      {"Method of Attack": "Assassination", "Deaths": 27598},
+      {"Method of Attack": "Bombing/Explosion", "Deaths": 174134},
+      {"Method of Attack": "Facility/Infrastructure Attack", "Deaths": 4552},
+      {"Method of Attack": "Hijacking", "Deaths": 3748},
+      {"Method of Attack": "Hostage Taking (Barricade Incident)", "Deaths": 5050},
+      {"Method of Attack": "Hostage Taking (Kidnapping)", "Deaths": 32301},
+      {"Method of Attack": "Unarmed Assault", "Deaths": 933},
+      {"Method of Attack": "Unknown", "Deaths": 48707}
     ]
   },
   "mark": "arc",
@@ -38,7 +38,7 @@
       }
     },
     "tooltip": [
-      {"field": "AttackType", "type": "nominal", "title": "Attack Type:"},
+      {"field": "Method of Attack:", "type": "nominal", "title": "Attack Type:"},
       {"field": "Deaths", "type": "quantitative", "title": "Deaths:"}
     ]
   }
