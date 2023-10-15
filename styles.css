@@ -6,8 +6,8 @@ body * {
 /* Styling for headers h1 and h2 */
 h1, h2 {
     font-weight: 1000;
-    margin-top: 2px;
-    margin-bottom: 0px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 /* Additional styling specific for h2 */
@@ -90,6 +90,7 @@ body {
 .legend-container {
     padding: 10px 0;
     font-size: 14px;
+    margin-left: 10px;  /* Add this line to move the legend to the right */
 }
 
 /* Bolded h3 with specific margins */
@@ -111,7 +112,7 @@ h3 {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 12px;
 }
 
 /* Specific colors for certain groups */

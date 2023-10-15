@@ -39,34 +39,20 @@
       }
     },
     {
-      "name": "year_filter",
-      "value": 2012,
-      "bind": {
-        "input": "range",
-        "min": 2012,
-        "max": 2020,
-        "step": 1,
-        "name": "Show years greater than:"
-      }
-    },
-    {
       "name": "year_filter2",
       "value": 2021,
       "bind": {
         "input": "range",
-        "min": 2013,
+        "min": 2012,
         "max": 2021,
         "step": 1,
-        "name": "Show years less than:"
+        "name": "Years less than:"
      }
     }
   ],
   "transform": [
     {
       "filter": "Entity_selection == null || datum.Entity == Entity_selection"
-    },
-    {
-      "filter": "datum.Year >= year_filter"
     },
     {
       "filter": "datum.Year <= year_filter2"
