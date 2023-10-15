@@ -20,7 +20,7 @@
   "encoding": {
     "theta": {"field": "Deaths", "type": "quantitative"},
     "color": {
-      "field": "AttackType",
+      "field": "Method of Attack",
       "type": "nominal",
       "scale": {
         "domain": ["Armed Assault", "Assassination","Bombing/Explosion","Facility/Infrastructure Attack","Hostage Taking (Kidnapping)","Unknown","Hijacking", "Hostage Taking (Barricade Incident)", "Unarmed Assault" ],
