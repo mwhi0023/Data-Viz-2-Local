@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Attack Types",
+  "width": 400,
+  "height": 400,
   "data": {
     "values": [
       {"AttackType": "Armed Assault", "Deaths": 182325},
