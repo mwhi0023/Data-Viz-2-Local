@@ -22,7 +22,6 @@
     "color": {
       "field": "AttackType",
       "type": "nominal",
-      "legend": null,
       "scale": {
         "domain": ["Armed Assault", "Assassination","Bombing/Explosion","Facility/Infrastructure Attack","Hostage Taking (Kidnapping)","Unknown","Hijacking", "Hostage Taking (Barricade Incident)", "Unarmed Assault" ],
         "range": [
