@@ -1,23 +1,28 @@
+/* Base font for all elements */
 body * {
     font-family: 'Open Sans', sans-serif;
 }
 
+/* Styling for headers h1 and h2 */
 h1, h2 {
     font-weight: 1000;
-    margin-top: 2px; /* Apply 0 margin to h1 as well */
-    margin-bottom: 0px; /* Adjust this as per your requirements */
+    margin-top: 2px;
+    margin-bottom: 0px;
 }
 
+/* Additional styling specific for h2 */
 h2 {
     text-align: left;
     font-size: 20px;
     font-weight: 300;
 }
 
+/* Body background color */
 body {
     background-color: lightgray;
 }
 
+/* Main page container styling */
 .page {
     width: 1200px;
     background-color: white;
@@ -26,70 +31,95 @@ body {
     padding-top: 30px;
 }
 
- {
+/* Global box-sizing, margin, and padding */
+{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Styling for visualization container */
 .vis-container {
-    /* Adjust this to fit your needs, for example by adding a border or some padding */
-    width: 50%;
+    width: 100%;
     height: auto;
 }
 
-.description p {
-    text-align: justify;
-    text-justify: inter-word; /* this helps in better spacing between words */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
 }
 
+.chart-container, .description-container {
+    flex: 1;  /* This means they will take up equal parts */
+    padding: 0 10px;  /* Some padding to avoid sticking to the edges or each other */
+}
+
+
+
+/* Paragraph styling inside .description */
+.description p {
+    text-align: justify;
+    text-justify: inter-word;
+    padding-left: 20px; /* adjust value as needed */
+}
+
+/* Base styling for description */
 .description {
     padding: 0px;
 }
 
+/* h2 inside description adjustments */
 .description h2 {
-    margin-top: 0px; /* Ensure 0 margin for h2 inside description */
+    margin-top: 0px;
 }
 
+/* Additional padding for right description */
 .description-right {
     padding-left: 1px;
 }
 
+/* Padding adjustments for left description */
 .description-left {
     padding-right: 20px;
-    padding-top: 5px; /* You can adjust this if more or less space is needed */
+    padding-top: 5px;
 }
 
+/* Grid row styling, assuming you're using a grid framework like Pure.css */
 .pure-g {
     margin-bottom: 10px;
 }
 
+/* Smaller font utility class */
 .small-font {
     font-size: 14px;
 }
 
-
+/* Half width grid column */
 .pure-g > .pure-u-1-2 {
     width: 50%;
 }
 
+/* Legend container styling */
 .legend-container {
     padding: 10px 0;
     font-size: 14px;
 }
 
+/* Bolded h3 with specific margins */
 h3 {
     font-weight: bold;
     margin: 0 0 10px 0;
     border: none;  
 }
 
+/* Flex display for legend items */
 .legend-item {
     display: flex;
     align-items: center;
     margin-bottom: 5px;
 }
 
+/* Circle color swatches for legend */
 .legend-color {
     width: 15px;
     height: 15px;
@@ -97,10 +127,11 @@ h3 {
     margin-right: 10px;
 }
 
+/* Specific colors for certain groups */
 .taliban {
-    background-color: #3498db; /* Blue color */
+    background-color: #3498db;
 }
 
 .isis {
-    background-color: #e74c3c; /* Orange color */
+    background-color: #e74c3c;
 }
