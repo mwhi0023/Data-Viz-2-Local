@@ -83,10 +83,10 @@
           "#CC79A7"
         ]
       },
-      "legend": {
-        "title": "Terrorist Group", 
-        "symbolType": "circle" 
-        },
+        "legend": {
+          "title": "Terrorist Group", 
+          "symbolType": "circle" 
+          }
     },
     "tooltip": [
       {"field": "gname", "type": "nominal", "title": "Terrorist Group:"},

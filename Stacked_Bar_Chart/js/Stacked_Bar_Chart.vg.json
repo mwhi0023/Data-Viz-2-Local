@@ -55,7 +55,7 @@
           "type": "nominal",
             "legend": {
               "title": "Method of Attack",
-              "symbolType": "circle"  // Add this line
+              "symbolType": "circle"  
             },
           "scale": {
             "domain": [
