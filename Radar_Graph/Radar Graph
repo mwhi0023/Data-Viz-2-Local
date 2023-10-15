@@ -3,7 +3,11 @@
   "description": "A radar chart showing different types of terrorist attacks by groups.",
   "width": 600,
   "height": 430,
-  "padding": {"top": 20, "left": 75, "right": 100, "bottom": 0},
+  "title": {
+    "text": "Deaths from Attack Types for Terrorist Groups",
+    "dx": -43  
+  },
+  "padding": {"top": 30, "left": 75, "right": 100, "bottom": 0},
   "autosize": {"type": "none", "contains": "padding"},
 
   "signals": [
@@ -121,6 +125,20 @@
       },
       "marks": [
         {
+          "type": "rect",
+          "encode": {
+            "enter": {
+              "x": {"value": -260},
+              "y": {"value": -202},
+              "width": {"signal": "590"},
+              "height": {"signal": "405"},
+              "stroke": {"value": "lightgray"},
+              "strokeWidth": {"value": 1},
+              "fill": {"value": "transparent"}
+            }
+          }
+        },
+        {
           "type": "line",
           "name": "group-line",
           "from": {"data": "facet"},
@@ -209,8 +227,7 @@
             }
           ],
           "fill": {"value": "black"},
-          "fontSize": {"value": 12},
-          "fontWeight": {"value": "bold"}
+          "fontSize": {"value": 12}
         }
       }
     },
