@@ -17,27 +17,27 @@
   {
     "Group": "Taliban",
     "AttackType": "Armed Assault",
-    "Count": 17788
+    "Count": 16375
   },
   {
     "Group": "Taliban",
     "AttackType": "Assassination",
-    "Count": 1473
+    "Count": 1241
   },
   {
     "Group": "Taliban",
     "AttackType": "Bombing/Explosion",
-    "Count": 14597
+    "Count": 12633
   },
   {
     "Group": "Taliban",
     "AttackType": "Hostage Taking (Kidnapping)",
-    "Count": 4086
+    "Count": 3889
   },
   {
     "Group": "Taliban",
     "AttackType": "Unknown",
-    "Count": 15344
+    "Count": 15096
   },
   {
     "Group": "Islamic State (ISIS)",
@@ -65,6 +65,7 @@
     "Count": 6425
   }
 ]
+
     },
     {
       "name": "AttackTypes",

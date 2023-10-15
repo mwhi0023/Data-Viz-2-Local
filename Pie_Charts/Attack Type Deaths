@@ -2,41 +2,44 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
     "values": [
-      {"AttackType": "Armed Assault", "Deaths": 182325},
-      {"AttackType": "Assassination", "Deaths": 27598},
-      {"AttackType": "Bombing/Explosion", "Deaths": 174134},
-      {"AttackType": "Facility/Infrastructure Attack", "Deaths": 4552},
-      {"AttackType": "Hijacking", "Deaths": 3748},
-      {"AttackType": "Hostage Taking (Barricade Incident)", "Deaths": 5050},
-      {"AttackType": "Hostage Taking (Kidnapping)", "Deaths": 32301},
-      {"AttackType": "Unarmed Assault", "Deaths": 933},
-      {"AttackType": "Unknown", "Deaths": 48707}
+      {"gname": "Samri militia", "nkill": 766, "Attack Title": "Ethiopia Mai Kadra Massacre"},
+      {"gname": "Al-Shabaab", "nkill": 588, "Attack Title": "Somalia's Deadliest Bombing"},
+      {"gname": "Taliban", "nkill": 466, "Attack Title": "Ghazni offensive"},
+      {"gname": "Islamic State of Iraq and the Levant (ISIL)", "nkill": 433, "Attack Title": "Palmyra offensive"},
+      {"gname": "Islamic State of Iraq and the Levant (ISIL)", "nkill": 383, "Attack Title": "Iraq bombing"},
+      {"gname": "Tribesmen", "nkill": 339, "Attack Title": "Dr Congo's 'invisible' Massacre"},
+      {"gname": "Taliban", "nkill": 330, "Attack Title": "Battle of Farah"},
+      {"gname": "Sinai Province of the Islamic State", "nkill": 311, "Attack Title": "Sinai mosque attack"},
+      {"gname": "Islamic State of Iraq and the Levant (ISIL)", "nkill": 300, "Attack Title": "Battle of Mosul (1)"},
+      {"gname": "Islamic State of Iraq and the Levant (ISIL)", "nkill": 284, "Attack Title": "Battle of Mosul (2)"}
     ]
   },
-  "mark": "arc",
+  "mark": "bar",
   "encoding": {
-    "theta": {"field": "Deaths", "type": "quantitative"},
+    "x": {
+      "field": "nkill",
+      "type": "quantitative",
+      "axis": {"title": "Number of Casualties"}
+    },
+    "y": {
+      "field": "Attack Title",
+      "type": "ordinal",
+      "sort": "-x",
+      "axis": {"title": "Attack Title", "labelLimit": 250}
+    },
     "color": {
-      "field": "AttackType",
+      "field": "gname",
       "type": "nominal",
       "scale": {
-        "domain": ["Armed Assault", "Assassination","Bombing/Explosion","Facility/Infrastructure Attack","Hostage Taking (Kidnapping)","Unknown","Hijacking", "Hostage Taking (Barricade Incident)", "Unarmed Assault" ],
-        "range": [
-          "#5e81ac",
-          "#88c0d0",
-          "#d08770",
-          "#ebcb8b",
-          "#a3be8c",
-          "#b48ead",
-          "gray",
-          "gray",
-          "gray"
-        ]
-      }
+        "domain": ["Samri militia", "Al-Shabaab", "Taliban", "Islamic State of Iraq and the Levant (ISIL)", "Tribesmen", "Sinai Province of the Islamic State"],
+        "range": ["#E69F00", "#56B4E9", "#D55E00", "#F0E442", "#0072B2", "#CC79A7"]
+      },
+      "legend": {"title": "Terrorist Group"}
     },
     "tooltip": [
-      {"field": "AttackType", "type": "nominal", "title": "Attack Type:"},
-      {"field": "Deaths", "type": "quantitative", "title": "Deaths:"}
+      {"field": "gname", "type": "nominal", "title": "Terrorist Group:"},
+      {"field": "nkill", "type": "quantitative", "title": "Number of Casualties:"},
+      {"field": "Attack Title", "type": "ordinal", "title": "Attack Title:"}
     ]
   }
 }

@@ -30,6 +30,10 @@
     "color": {
       "field": "gname",
       "type": "nominal",
+      "scale": {
+        "domain": ["Samri militia", "Al-Shabaab", "Taliban", "Islamic State of Iraq and the Levant (ISIL)", "Tribesmen", "Sinai Province of the Islamic State"],
+        "range": ["#E69F00", "#56B4E9", "#D55E00", "#F0E442", "#0072B2", "#CC79A7"]
+      },
       "legend": {"title": "Terrorist Group"}
     },
     "tooltip": [
