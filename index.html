@@ -77,34 +77,43 @@
     <!-- end pure grid group -->
 
 
-    <!-- Third visualization -->
-    <div class="pure-g"> <!-- Start a new grid for the third visualization -->
-      <div class="pure-u-1-1">
-          <div class="h2">
-            <h2>
-             Deaths from Attack Types 
-            </h2>
+<!-- Third visualization -->
+<div class="pure-g"> <!-- Start a new grid for the third visualization -->
+  <div class="pure-u-1-1">
+      <div class="h2">
+        <h2>
+         Deaths from Attack Types 
+        </h2>
+      </div>
+  </div>
+
+  <div class="pure-g">
+      <div class="pure-u-1-2"> <!-- Visualization on the left with Figure 3 annotation -->
+          <div id="viz3" class="vis-container"></div>
+          <!-- Adding Figure 3 annotation below the left visualization -->
+          <div class="annotation">
+              Figure 3
           </div>
       </div>
+      
+      <div class="pure-u-1-2"> <!-- Visualization on the right with Figure 4 annotation -->
+        <div id="viz5" class="vis-container" style="padding-left: 50px;"></div>
+        <!-- Adding Figure 4 annotation below the right visualization -->
+        <div class="annotation" style="padding-left: 50px;">
+            Figure 4
+        </div>
+      </div>
 
-      <div class="pure-g">
-          <div class="pure-u-1-2"> <!-- Visualization on the left -->
-              <div id="viz3" class="vis-container"></div>
-          </div>
-          <div class="pure-u-1-2">
-            <div id="viz5" class="vis-container" style = "padding-left: 50px;"></div>
-          </div>
-
-          <div class="pure-u-1-1"> <!-- Description on the right -->
-              <div class="description description-right">
-                  <p>
-                    This visualization offers a detailed look into the various types of terrorist attacks that occurred each year. By categorizing incidents into distinct attack types and representing them in a stacked bar format, viewers can easily discern trends and shifts in terrorist strategies over time. Not only does it emphasize the most predominant attack methods, but it also sheds light on the lesser-known tactics employed across the years. Dive into this chart to gain a comprehensive understanding of the evolving nature of terror threats worldwide.
-                  </p>
-              </div>
+      <div class="pure-u-1-1"> <!-- Description below -->
+          <div class="description description-right">
+              <p>
+                This visualization offers a detailed look into the various types of terrorist attacks that occurred each year. By categorizing incidents into distinct attack types and representing them in a stacked bar format, viewers can easily discern trends and shifts in terrorist strategies over time. Not only does it emphasize the most predominant attack methods, but it also sheds light on the lesser-known tactics employed across the years. Dive into this chart to gain a comprehensive understanding of the evolving nature of terror threats worldwide.
+              </p>
           </div>
       </div>
-    </div>
-    <!-- end pure grid group for third visualization -->
+  </div>
+</div>
+<!-- end pure grid group for third visualization -->
 
 <!-- Fourth visualization: Radar Graph -->
 <div class="pure-g"> <!-- Start a new grid for the fourth visualization -->
