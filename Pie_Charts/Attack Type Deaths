@@ -48,8 +48,8 @@
       }
     },
     "tooltip": [
-      {"field": "Method of Attack", "type": "nominal", "title": "Method of Attack:"},
-      {"field": "Deaths", "type": "quantitative", "title": "Deaths:"}
+      {"field": "Method of Attack", "type": "nominal", "title": "Method of Attack"},
+      {"field": "Deaths", "type": "quantitative", "title": "Deaths"}
     ]
   }
 }

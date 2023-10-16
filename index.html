@@ -37,44 +37,53 @@
     </div>
     <!-- end pure grid group -->
 
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div class="description description-left">
-          <h2>Chloropeth Map: Deaths from Terroism by Country</h2>
-        </div>
-      </div>
-      <div class="pure-u-1-1">
-        <div id="viz" class="vis-container" style="padding-left: 5px;"></div>
-      </div>
+<!-- pure grid group -->
+<div class="pure-g">
+  <div class="pure-u-1-1">
+    <div class="description description-left">
+      <h2>Deaths from Terroism by Country</h2>
     </div>
-    <!-- end pure grid group -->
+  </div>
+  <div class="pure-u-1-1">
+    <div id="viz" class="vis-container" style="padding-left: 5px;"></div>
+    <!-- Figure 1 annotation below the visualization -->
+    <div class="annotation" style="padding-left: 1px;">
+        Figure 1
+    </div>
+  </div>
+</div>
+<!-- end pure grid group -->
 
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1">
-          <h2>Stacked Area Chart: Terrorism Attacks by Region</h2>
+<!-- pure grid group -->
+<div class="pure-g">
+  <div class="pure-u-1">
+      <h2>Terrorism Attacks by Region</h2>
+  </div>
+</div>
+<div class="pure-g">
+  <div class="pure-u-1-2">
+      <!-- Visualization container for the graph -->
+      <div id="viz2" class="vis-container"></div>
+      <!-- Figure 2 annotation below the visualization -->
+      <div class="annotation" style="padding-left: 1px;">
+          Figure 2
       </div>
-    </div>
-    <div class="pure-g">
-      <div class="pure-u-1-2">
-          <!-- Visualization container for the graph -->
-          <div id="viz2" class="vis-container"></div>
+  </div>
+  <div class="pure-u-1-2">
+      <!-- Description container for the text -->
+      <div class="description" style = "padding-left: 50px;">
+          <p>
+              This visualization presents an overview of the number of terrorist attacks by world region from 2011 to 2021. 
+              A clear peak is observable around 2014, after which there's a noticeable decline in incidents. 
+              The regions of the Middle East & North Africa, as well as South Asia, prominently dominate in terms of attack frequency, reflecting the intense conflicts and instabilities in those areas. 
+              Other regions, such as Australasia & Oceania and North America, have considerably fewer incidents. 
+              The chart serves as a testament to the varying degrees of terrorist activity across different parts of the world over the past decade.
+          </p>
       </div>
-      <div class="pure-u-1-2">
-          <!-- Description container for the text -->
-          <div class="description" style = "padding-left: 50px;">
-              <p>
-                  This visualization presents an overview of the number of terrorist attacks by world region from 2011 to 2021. 
-                  A clear peak is observable around 2014, after which there's a noticeable decline in incidents. 
-                  The regions of the Middle East & North Africa, as well as South Asia, prominently dominate in terms of attack frequency, reflecting the intense conflicts and instabilities in those areas. 
-                  Other regions, such as Australasia & Oceania and North America, have considerably fewer incidents. 
-                  The chart serves as a testament to the varying degrees of terrorist activity across different parts of the world over the past decade.
-              </p>
-          </div>
-      </div>
-    </div>
-    <!-- end pure grid group -->
+  </div>
+</div>
+<!-- end pure grid group -->
+
 
 
 <!-- Third visualization -->
@@ -118,28 +127,38 @@
 <!-- Fourth visualization: Radar Graph -->
 <div class="pure-g"> <!-- Start a new grid for the fourth visualization -->
   <div class="pure-u-1-1">
-      <h2 class="h2">Radar Graph: Attack Types by Groups</h2>
+      <h2 class="h2">Attack Types by Groups</h2>
   </div>
 
   <div class="pure-g">
       <div class="pure-u-1-2"> <!-- Centered Visualization -->
 
-          <div id="viz4" class="vis-container" style="padding-left: 0px;"></div>
+          <!-- Adding a container to wrap both the visualization and the legend -->
+          <div class="radar-with-legend">
 
-          <!-- Custom Legend for the Radar Graph -->
-          <div class="legend-container">
-            <h3>Terrorist Groups</h3>
-            <div class="legend-item">
-                <div class="legend-color taliban"></div>
-                <span class="legend-label">Taliban</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color isis"></div>
-                <span class="legend-label">Islamic State (ISIS)</span>
-            </div>
-        </div>
-          <!-- End of Custom Legend -->
-          
+              <div id="viz4" class="vis-container" style="padding-left: 0px;"></div>
+
+              <!-- Custom Legend for the Radar Graph -->
+              <div class="legend-container">
+                <h3>Terrorist Groups</h3>
+                <div class="legend-item">
+                    <div class="legend-color taliban"></div>
+                    <span class="legend-label">Taliban</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color isis"></div>
+                    <span class="legend-label">Islamic State (ISIS)</span>
+                </div>
+              </div>
+              <!-- End of Custom Legend -->
+
+          </div> <!-- end of radar-with-legend container -->
+
+          <!-- Adding Figure 5 annotation below the radar graph -->
+          <div class="annotation" style="padding-left: 10px;">
+              Figure 5
+          </div>
+
       </div>
 
       <div class="pure-u-1-2"> <!-- Description to right of visualization -->
@@ -152,27 +171,35 @@
   </div>
 </div>
 
-    <!-- Sixth visualization: Biggest Events by Deaths -->
-    <div class="pure-g"> <!-- Start a new grid for the sixth visualization -->
-      <div class="pure-u-1-2">
-          <h2 class="h2">Biggest Events by Deaths</h2>
-      </div>
 
-      <div class="pure-g">
-          <div class="pure-u-1-2"> <!-- Centered Visualization -->
-              <div id="viz6" class="vis-container"></div>
-          </div>
 
-          <div class="pure-u-1-2"> <!-- Description below visualization -->
-              <div class="description description-center" style="padding-left: 50px;">
-                  <p>
-                    This horizontal bar chart provides a sobering view of the most significant terrorist events based on the number of deaths. Each bar represents a distinct event, illustrating the magnitude of casualties involved. The color-coded bars enable viewers to quickly identify the terrorist group responsible for each act. Events like the "Ethiopia Mai Kadra Massacre" and "Somalia's Deadliest Bombing" sit at the top, indicating their devastating impact in terms of human lives lost. By understanding the deadliest events and the groups behind them, one can better grasp the scale and nature of global terrorist activities.
-                  </p>
-              </div>
+<!-- Sixth visualization: Biggest Events by Deaths -->
+<div class="pure-g"> <!-- Start a new grid for the sixth visualization -->
+  <div class="pure-u-1-2">
+      <h2 class="h2">Biggest Events by Deaths</h2>
+  </div>
+
+  <div class="pure-g">
+      <div class="pure-u-1-2"> <!-- Centered Visualization -->
+          <div id="viz6" class="vis-container"></div>
+          
+          <!-- Figure 6 annotation below the visualization -->
+          <div class="annotation" style="padding-left: 5px;">
+              Figure 6
           </div>
       </div>
-    </div>
-    <!-- end pure grid group for sixth visualization -->
+
+      <div class="pure-u-1-2"> <!-- Description below visualization -->
+          <div class="description description-center" style="padding-left: 50px;">
+              <p>
+                This horizontal bar chart provides a sobering view of the most significant terrorist events based on the number of deaths. Each bar represents a distinct event, illustrating the magnitude of casualties involved. The color-coded bars enable viewers to quickly identify the terrorist group responsible for each act. Events like the "Ethiopia Mai Kadra Massacre" and "Somalia's Deadliest Bombing" sit at the top, indicating their devastating impact in terms of human lives lost. By understanding the deadliest events and the groups behind them, one can better grasp the scale and nature of global terrorist activities.
+              </p>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- end pure grid group for sixth visualization -->
+
   
     <script type="text/javascript">
         var data_location1 = "https://raw.githubusercontent.com/mwhi0023/Data_Viz_2_Local/main/Chloropeth_Map/map_clean_v1.csv";

@@ -83,7 +83,7 @@ body {
 .legend-container {
     padding: 10px 0;
     font-size: 14px;
-    margin-left: 10px;  /* Add this line to move the legend to the right */
+    margin-left: 10px;  
 }
 
 /* Bolded h3 with specific margins */
@@ -106,6 +106,23 @@ h3 {
     height: 15px;
     border-radius: 50%;
     margin-right: 12px;
+}
+
+/* New styling for the wrapping container */
+.radar-with-legend {
+    position: relative; /* Allows inner children with 'absolute' position to be positioned relative to this container */
+}
+
+/* Modified Legend container styling for positioning */
+.legend-container {
+    position: absolute; 
+    top: 25px;          
+    right: 10px;        
+    padding: 10px 0;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.8); /*Semi-transparent background for better readability */
+    border: 1px solid #ccc;  /* Border for better visibility */
+    border-radius: 8px;      /* Rounded corners */
 }
 
 /* Specific colors for certain groups */
