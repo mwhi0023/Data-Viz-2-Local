@@ -46,6 +46,7 @@ body {
 /* Base styling for description */
 .description {
     padding: 0px;
+    font-size: 20px;
 }
 
 /* h2 inside description adjustments */
