@@ -141,3 +141,15 @@ h3 {
     font-weight: bold;
     font-size: 14px;
 }
+
+.impact-text {
+    font-family: Impact, sans-serif;
+    font-size: 40px;
+}
+
+.attribution {
+      font-size: 10px;
+      text-align: center;
+      margin-top: 20px;
+   }
+
